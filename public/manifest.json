@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Summarizer",
+  "icons": {
+    "32": "32.png"
+  },
+  "version": "1.0",
+  "description": "Summarize ChatGPT conversations and save them as PDFs.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["scripting"],
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/c/*"],
+      "js": ["src/content.jsx"],
+      "run_at": "document_end"
+    }
+  ]
+}
